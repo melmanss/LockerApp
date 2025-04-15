@@ -1,15 +1,12 @@
-
 package app;
 
-import java.util.concurrent.locks.Lock;
-import java.util.concurrent.locks.ReentrantLock;
 
 public class DataHandler {
 
-    private final Lock lock = new ReentrantLock();
+    private final Locker lock = new
 
-    public int modify(int num) {
-        lock.lock();
+    public synchronized int modify(int num) {
+        lock.();
         try {
             num = num * 3;
             return num;
